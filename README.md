@@ -1,3 +1,13 @@
+Nexus
+=====
+Currently Nexus utilizes a single directory within the rememberme codebase: src/*
+
+We import this library into our codebase by 
+
+1. fork of rememberme to kdflint/rememberme-ship
+2. fork of kdflint/rememberme-ship to NorthBridge/rememberme-community
+3. symbolic link from src folder to nexus codebase
+
 # Secure "Remember Me"
 This library implements the best practices for implementing a secure
 "Remember Me" functionality on web sites. Login information and unique secure 
