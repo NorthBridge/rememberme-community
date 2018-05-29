@@ -17,8 +17,8 @@ interface StorageInterface
     /**
      * Return Tri-state value constant
      *
-     * @param mixed $credential Unique credential (user id, email address, user name)
-     * @param string $token One-Time Token
+     * @param mixed  $credential      Unique credential (user id, email address, user name)
+     * @param string $token           One-Time Token
      * @param string $persistentToken Persistent Token
      * @return int
      */
@@ -29,27 +29,27 @@ interface StorageInterface
      * Create a new storage entry, if the combination of credential and persistent
      * token does not exist.
      *
-     * @param mixed $credential
+     * @param mixed  $credential
      * @param string $token
      * @param string $persistentToken
-     * @param int $expire Timestamp when this triplet will expire (0=no expiry)
+     * @param int    $expire          Timestamp when this triplet will expire
      */
-    public function storeTriplet($credential, $token, $persistentToken, $expire = 0);
+    public function storeTriplet($credential, $token, $persistentToken, $expire);
 
     /**
      * Replace current token after successful authentication
-     * @param $credential
-     * @param $token
-     * @param $persistentToken
-     * @param int $expire
+     * @param mixed  $credential
+     * @param string $token
+     * @param string $persistentToken
+     * @param int    $expire
      */
-    public function replaceTriplet($credential, $token, $persistentToken, $expire = 0);
+    public function replaceTriplet($credential, $token, $persistentToken, $expire);
 
     /**
      * Remove one triplet of the user from the store
      *
      * @abstract
-     * @param mixed $credential
+     * @param mixed  $credential
      * @param string $persistentToken
      * @return void
      */
@@ -59,8 +59,17 @@ interface StorageInterface
      * Remove all triplets of a user, effectively logging him out on all machines
      *
      * @abstract
-     * @param $credential
+     * @param mixed $credential
      * @return void
      */
     public function cleanAllTriplets($credential);
+
+    /**
+     * Remove all expired triplets of all users.
+     *
+     * @abstract
+     * @param int $expiryTime Timestamp, all tokens before this time will be deleted
+     * @return void
+     */
+    public function cleanExpiredTokens($expiryTime);
 }
