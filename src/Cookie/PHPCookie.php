@@ -2,6 +2,8 @@
 
 namespace Birke\Rememberme\Cookie;
 
+require_once(dirname(__FILE__) . "/CookieInterface.php");
+
 /**
  * Wrapper around setcookie function and $_COOKIE global variable
  */

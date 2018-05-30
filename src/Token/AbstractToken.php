@@ -2,6 +2,8 @@
 
 namespace Birke\Rememberme\Token;
 
+require_once(dirname(__FILE__) . "/TokenInterface.php");
+
 /**
  * Common utility class for tokens
  *

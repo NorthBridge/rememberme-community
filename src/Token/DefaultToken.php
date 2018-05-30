@@ -2,6 +2,8 @@
 
 namespace Birke\Rememberme\Token;
 
+require_once(dirname(__FILE__) . "/AbstractToken.php");
+
 /**
  * A token generated based on the PHP function random_bytes
  *

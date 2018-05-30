@@ -7,6 +7,9 @@ use Birke\Rememberme\Cookie\PHPCookie;
 use Birke\Rememberme\Token\DefaultToken;
 use Birke\Rememberme\Token\TokenInterface;
 
+require_once(dirname(__FILE__) . "/Token/DefaultToken.php");
+require_once(dirname(__FILE__) . "/Cookie/PHPCookie.php");
+
 /**
  * Authenticate via "remember me" cookie
  *

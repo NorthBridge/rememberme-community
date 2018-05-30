@@ -2,6 +2,8 @@
 
 namespace Birke\Rememberme\Storage;
 
+require_once(dirname(__FILE__) . "/StorageInterface.php");
+
 /**
  * File-Based Storage
  */
